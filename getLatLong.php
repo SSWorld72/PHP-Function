@@ -1,6 +1,5 @@
 <?php
-
-  //測試用
+	//測試用
 	//try {
 	//	$location = getLatLong('台北火車站');
 	//	echo "查詢的經緯度為：{$location['lat']}, {$location['lng']}";
@@ -9,7 +8,7 @@
 	//}
 
 	// 透過 Google Maps Geocoding API 將地址或地名轉換為經緯度
-  // 請記得修改 XXXXXXXXXXXXXXXXXXXXXXXXXX 及 xxxxx.yyy.com.tw
+	// 請記得修改 XXXXXXXXXXXXXXXXXXXXXXXXXX 及 xxxxx.yyy.com.tw
 	function getLatLong($address){
 
 		// 驗證輸入：確保輸入為字串，否則拋出異常
@@ -32,7 +31,7 @@
 		//將 cURL 的執行結果作為一個字串返回，而不是直接輸出
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-    //檢查是否為對外網頁伺服器
+		//檢查是否為對外網頁伺服器
 		if ($_SERVER['HTTP_HOST'] !== 'xxxxx.yyy.com.tw'){  //請將其修改成該對外網頁伺服器的完全合格網域名稱，也就是 FQDN
 			//關閉伺服器 SSL 證書的驗證，避免異常（限無對外服務的內部開發環境下使用，可對外服務的伺服器環境請停用關閉）
 			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);	// 是否驗證伺服器 SSL 證書的主機名
@@ -71,5 +70,4 @@
 			return $location;
 		}
 	}
-
 ?>
